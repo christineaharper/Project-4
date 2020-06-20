@@ -1,0 +1,31 @@
+/* ============================================= */
+/*              Images                           */
+/* ============================================= */
+
+.img-avatar {
+  max-width: 100%;
+  margin-top: 10px;
+  max-height: 100%;
+
+  @include centerblock;
+}
+
+.img-frame {
+  max-width: 100%;
+  margin-top: 10px;
+  padding: 13px;
+  border: 1px solid #ccc;
+
+  @include centerblock;
+}
+
+.img-logo {
+  max-width: 100%;
+
+  @include centerblock;
+
+  @include bp-med {
+    margin-left: initial;
+    margin-right: initial;
+  }
+}

@@ -1,0 +1,47 @@
+/* ============================================= */
+/*                 Background                    */
+/* ============================================= */
+
+
+@mixin button ($bg-color) {
+
+  background-color: $bg-color;
+
+  &:hover {
+    background-color: lighten($bg-color, 15%);
+  }
+}
+
+
+/* ============================================= */
+/*                   Layout                      */
+/* ============================================= */
+
+@mixin centerblock {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+
+/* ============================================= */
+/*                Transitions                    */
+/* ============================================= */
+
+@mixin transition {
+  transition: 
+  background-color .2s ease-in-out,
+  color .2s ease-in-out;
+}
+
+
+/* ============================================= */
+/*              Breakpoints                      */
+/* ============================================= */
+
+@mixin bp-med {
+  @media (min-width: $break-med) {
+    @content;
+  }
+}
+

@@ -1,0 +1,35 @@
+/* ============================================= */
+/*              Navigation                       */
+/* ============================================= */
+
+.nav {
+  padding-left: 0;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include bp-med {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &-link {
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+    @include transition;
+  
+      &:hover {
+        color: #fff;
+        background-color: $color-secondary;
+      }
+
+     @include bp-med {
+      flex-basis: 100px;
+     } 
+  }
+}
+

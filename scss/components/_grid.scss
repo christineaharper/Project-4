@@ -1,0 +1,88 @@
+/* ============================================= */
+/*              Grid System                      */
+/* ============================================= */
+
+.container {
+  padding: 0 10px;
+
+  @include bp-med {
+    max-width: 1400px;
+    @include centerblock;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 10px;
+
+  @include bp-med {
+      flex-direction: row;
+  }
+}
+
+.centered {
+  @include bp-med {
+    @include centerblock;
+    }
+  }
+
+
+[class^=col] {
+  margin-top: 10px;
+  flex-basis: 100%;
+  min-height: 25px;
+  padding: 10px;
+  border-radius: 5px;
+
+  @include bp-med {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    align-items: center;
+  }
+
+  & + [class^=col] {
+    @include bp-med {
+      margin-left: 10px;
+    }
+  }
+}
+
+$cols: (
+  "1" #927bc1,
+  "2" #fd7856,
+  "3" #deb2ee,
+  "4" #7ee6fd,
+  "5" #88d9a0,
+  "6" #4da2bb,
+  "7" #ec9fa3,
+  "8" #fd9f85,
+  "9" #e4757a,
+  "10" #63cc82,
+  "11" #51ddfc,
+  "12" #80e8d1,
+
+);
+
+@each $col, $color in $cols {
+  .theme.col-#{$col} {
+    background-color: $color;
+  }
+}
+
+.card {
+  flex-basis: 100%;
+}
+
+@include bp-med {
+  @for $i from 1 through 12 {
+
+    $basis: percentage(.0833 * $i);
+
+    .col-#{$i} {
+      flex-basis: $basis;
+    }
+  }
+}
+

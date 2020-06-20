@@ -1,0 +1,52 @@
+/* ============================================= */
+/*              Buttons                          */
+/* ============================================= */
+
+.btn {
+  margin-top: 15px;
+  width: 100%;
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  text-transform: uppercase;
+  border-radius: 5px;
+  
+  @include transition;
+  @include bp-med {
+    padding: 10px 30px;
+  }
+
+  & + .btn {
+    @include bp-med {
+      margin-left: 10px;
+    }
+  }
+}
+
+// initially used this function to change colours. Changed to using mixin.
+// .default {
+//   background-color: $color-default;
+//   &:hover {
+//     background-color: lightencolor($color-default);
+//   }
+// }
+
+.default {
+  @include button($color-default);
+}
+
+.error {
+  @include button($color-error);
+}
+
+.info {
+  @include button($color-info);
+}
+
+.success {
+  @include button($color-success);
+}
+
+.warning {
+  @include button($color-warn);
+}

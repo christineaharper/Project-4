@@ -1,0 +1,5 @@
+
+@function lightencolor($color-name) {
+  @return  lighten($color-name, 15%);
+}
+
